@@ -1,8 +1,13 @@
 # Django Organized Startup Project
 
-This project is built to create more organized startup Django project with meaningful backend and applications folders. The main folder has been renamed to `Backend` folder and the applications have been moved to be in one folder which is `Apps` folder.
+This project is built to create more organized startup Django project with meaningful backend and applications folders. 
 
-Project built with : Django 2.2
+# Project Layout
+* The main folder has been renamed to `Backend` folder.
+* The applications have been moved to be in one folder which is `Apps` folder.
+* `Templates` direcotry has been used as global templates folder.
+
+Project is built with : Django 2.2
 
 # Quick start 
 Please ensure that you have installed `Python`, `pip` and `virtualenv`:
@@ -25,6 +30,18 @@ python manage.py startapp NewApplication
 * Go to `Apps > NewApplication > apps.py` and change `name` value to:
 ```
 name = 'Apps.NewApplication'
+```
+* Add the new application to the `INSTALLED_APPS` in the `Backend > settings.py`:
+
+```
+INSTALLED_APPS = [
+    .....
+
+    # Your Applications
+    ........
+    'Apps.NewApplication.apps.NewApplicationConfig'
+    
+]
 ```
 
 * Done!
